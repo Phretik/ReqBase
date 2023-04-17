@@ -1,0 +1,32 @@
+{% extends "navbar.html" %} {% block title %}Account{% endblock %}
+
+{% block content %}
+<br />
+<div align="center">
+    <h1>Account information</h1>
+
+    <ul class="list-group list-group-flush" id="AcDetails">
+        <li class="list-group-item">
+            Id: {{ user.id }}
+        </li>
+        <li class="list-group-item">
+            Email: {{ user.email }}
+        </li>
+        <li class="list-group-item">
+            First Name: {{ user.first_name }}   
+        </li>
+        <li class="list-group-item">
+            Admin? 
+            {% if user.admin == True %}
+            Yes
+            {% else %}
+            No
+            {% endif %}
+        </li>
+        <li class="list-group-item">
+            <a href="/changePass" class="btn btn-info" role="button">Change password</a>
+        </li>
+    </ul>
+</div>
+<!--This code creates a list of the current user's details with a button below to navigate to the change password page-->
+{% endblock %}

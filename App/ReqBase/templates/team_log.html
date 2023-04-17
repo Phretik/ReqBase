@@ -1,0 +1,45 @@
+{% extends "navbar.html" %} {% block title %}Team Log{% endblock %}
+
+{% block content %}
+<br />
+<h1 align="center">Team log</h1>
+
+<form method="POST" onsubmit="return confirm('Are you happy to post this? Only an admin can delete or edit posts');">
+    <label for="log">New post: </label>
+    <textarea 
+    name="log"
+    id="log" 
+    class="form-control"
+    placeholder="What have you done?"
+    ></textarea>
+    <br />
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Post</button>
+    </div>
+</form>
+<!--Creates a form with a text area and a submit button which seeks confirmation before submitting-->
+
+<hr>
+    <div>
+        {% for post in posts %}
+         <b>Posted by: {{ post.user_email }} at {{ post.date }}</b>
+        {% if current_user.admin == True %}
+            <a type="button" class="fa fa-pencil" href="/updateLog/{{ post.id }}">
+                <span aria-hidden="true"></span>
+            </a>
+            <button type="button" class="close" onclick="deleteLog({{ post.id }})">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        {% endif %}
+       
+         <br />
+         {{ post.post }}
+         <hr>
+         <!--Creates a list of posts, poster and time/date of post.
+        It also creates two buttons if current user is an admin, one to edit, one to delete-->
+        {% endfor %}
+    </div>
+</div>
+<br />
+
+{% endblock %}

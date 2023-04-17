@@ -1,0 +1,70 @@
+{% extends "navbar.html" %} {% block title %}Update request{% endblock %}
+
+{% block content %}
+<br />
+<h1 align="center">Update request</h1>
+
+<form action=/updateReq/{{req_to_update.id}} method="POST" onsubmit="return confirm('Press okay if the details of the request are correct.');">
+    <div class="form-group">
+        <label for="appName">App name</label>
+        <input 
+        type="text" 
+        class="form-control" 
+        id="appName" 
+        name="appName"
+        value="{{ req_to_update.app_name }}"
+        placeholder="Enter app name">
+    </div>
+    <div class="form-group">
+        <label for="vendorName">Vendor name</label>
+        <input 
+        type="text" 
+        class="form-control" 
+        id="appVendor" 
+        name="appVendor"
+        value="{{ req_to_update.app_vendor }}" 
+        placeholder="Enter vendor name">
+    </div>
+    <div class="form-group">
+        <label for="reqName">Requestor name</label>
+        <input 
+        type="text" 
+        class="form-control" 
+        id="reqName" 
+        name="reqName"
+        value="{{ req_to_update.req_name }}"
+        placeholder="Enter requestor name">
+    </div>
+    <div class="form-group">
+        <label for="arch">Architecture: </label>
+        <br />
+        {% if req_to_update.arch == "x64" %}
+        <label class="radio-inline" for="x64"><input type="radio" id="x64" name="archNum" value="x64" checked>x64</label>
+        <br />
+        <label class="radio-inline" for="x86"><input type="radio" id="x86" name="archNum" value="x86" >x86</label>
+        <br />
+        {% else %}
+        <label class="radio-inline" for="x64"><input type="radio" id="x64" name="archNum" value="x64" >x64</label>
+        <br />
+        <label class="radio-inline" for="x86"><input type="radio" id="x86" name="archNum" value="x86" checked>x86</label>
+        <br />
+        {% endif %}
+    </div>
+
+    <label for="note">Notes: </label>
+    <input 
+    name="note"
+    id="note" 
+    class="form-control"
+    value="{{ req_to_update.note }}"
+    placeholder="Additional info"
+    ></input>
+    <br />
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Edit Request</button>
+    </div>
+</form>
+<br />
+<!--Creates a form for editing a request, pre-filled with the information of the request ot be edited
+also creates a submit button which asks for confirmation before submitting-->
+{% endblock %}

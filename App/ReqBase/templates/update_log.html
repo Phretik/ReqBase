@@ -1,0 +1,22 @@
+{% extends "navbar.html" %} {% block title %}Update Log{% endblock %}
+
+{% block content %}
+<br />
+<h1 align="center">Update log</h1>
+
+<form action=/updateLog/{{post_to_update.id}} method="POST" onsubmit="return confirm('Is the post now correct?');">
+    <label for="post">Edit post: </label>
+    <input 
+    name="post"
+    id="post"  
+    class="form-control"
+    value = "{{post_to_update.post}}"
+    ></input>
+    <br />
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Post</button>
+    </div>
+</form>
+<!--Creates a form to edit a post, pre-filled with the information of the post to be edited
+along with a submit button-->
+{% endblock %}
