@@ -11,18 +11,18 @@ Their are 2 users created:
 User 1 is of course an admin account, however the second and all subsequent users will be standard accounts
 
 This app's dependencies from pip freeze:
-click==8.1.3
-colorama==0.4.6
-Flask==2.2.2
-Flask-Login==0.6.2       
-Flask-SQLAlchemy==3.0.3  
-greenlet==2.0.2
-importlib-metadata==6.0.0
-itsdangerous==2.1.2      
-Jinja2==3.1.2
-MarkupSafe==2.1.2        
-pipdeptree==2.7.0        
-SQLAlchemy==2.0.7
-typing_extensions==4.5.0
-Werkzeug==2.2.2
-zipp==3.12.1
+-click==8.1.3
+-colorama==0.4.6
+-Flask==2.2.2
+-Flask-Login==0.6.2       
+-Flask-SQLAlchemy==3.0.3  
+-greenlet==2.0.2
+-importlib-metadata==6.0.0
+-itsdangerous==2.1.2      
+-Jinja2==3.1.2
+-MarkupSafe==2.1.2        
+-pipdeptree==2.7.0        
+-SQLAlchemy==2.0.7
+-typing_extensions==4.5.0
+-Werkzeug==2.2.2
+-zipp==3.12.1
