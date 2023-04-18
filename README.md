@@ -13,6 +13,8 @@ Their are 2 users created:
 
 User 1 is of course an admin account, however the second and all subsequent users will be standard accounts
 
+I have endevoured to comment and indent the code where I can to increase it's readability.
+
 This app's dependencies from pip freeze:
 -click==8.1.3
 -colorama==0.4.6
