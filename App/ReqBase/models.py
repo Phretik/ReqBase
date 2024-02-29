@@ -1,11 +1,11 @@
 from enum import unique
 
 from sqlalchemy import PrimaryKeyConstraint
-from ReqBase.instance import db
+from App.instance import database
 ## from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
-
+db = database
 
 class Req(db.Model):
     id = db.Column(db.Integer, primary_key=True)
