@@ -14,18 +14,18 @@ def create_app():
     
     
     app.config['SECRET_KEY'] = 'Obliviate'
-    ##app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://reqbase_database_user:MTjAUIER9Vu1oBu679YadjEiemUypZw6@dpg-cnfmchi1hbls739frbvg-a.oregon-postgres.render.com/reqbase_database'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    ##app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://reqbase_database_user:MTjAUIER9Vu1oBu679YadjEiemUypZw6@dpg-cnfmchi1hbls739frbvg-a.oregon-postgres.render.com/reqbase_database'
     
     db.init_app(app)
 
-    from .ReqBase.views import views
-    from .ReqBase.auth import auth
+    from .views import views
+    from .auth import auth
 
     app.register_blueprint(views, url_prefix='/')   ##Blueprints the URLs
     app.register_blueprint(auth, url_prefix='/')
 
-    from .ReqBase.models import User
+    from .models import User
 
     create_database(app)
 

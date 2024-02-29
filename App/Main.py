@@ -1,4 +1,4 @@
-from App import create_app
+from App.ReqBase import create_app
 
 app = create_app()   ##Creates the app
 
