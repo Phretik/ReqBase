@@ -1,7 +1,8 @@
 from enum import unique
 
 from sqlalchemy import PrimaryKeyConstraint
-from . import db
+from instance import db
+## from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 
