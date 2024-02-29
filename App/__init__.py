@@ -9,9 +9,11 @@ DB_NAME = "database.db"
 
 
 def create_app():
-    app = Flask(__name__) ##Creates the app and database
+    ##app = Flask(__name__) ##Creates the app and database
+    app = Flask(__name__, static_url_path='', static_folder='/static', template_folder='/templates')
     app.config['SECRET_KEY'] = 'Obliviate'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    ##postgres://reqbase_database_user:MTjAUIER9Vu1oBu679YadjEiemUypZw6@dpg-cnfmchi1hbls739frbvg-a.oregon-postgres.render.com/reqbase_database
     db.init_app(app)
 
     from .ReqBase.views import views
