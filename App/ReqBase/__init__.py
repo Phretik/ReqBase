@@ -10,7 +10,7 @@ DB_NAME = "database.db"
 
 def create_app():
     ##app = Flask(__name__) ##Creates the app and database
-    app = Flask(__name__, static_url_path='', static_folder='/static', template_folder='\ReqBase\templates')
+    app = Flask(__name__, static_url_path='', static_folder='/static', template_folder='\\ReqBase\templates')
     
     
     app.config['SECRET_KEY'] = 'Obliviate'
