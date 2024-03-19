@@ -40,6 +40,6 @@ def create_app():
     return app
 
 def create_database(app):
-    if not path.exists('App\instance/' + DB_NAME):   ##Creates database unless one already exists
+    if not path.exists('C:\Users\talmond3\OneDrive - DXC Production\Documents\GitHub\ReqBase\App\instance/' + DB_NAME):   ##Creates database unless one already exists
         with app.app_context():
             db.create_all()
