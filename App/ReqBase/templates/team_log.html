@@ -22,7 +22,7 @@
 <hr>
     <div>
         {% for post in posts %}
-         <b>Posted by: {{ post.user_email }} at {{ post.date }}</b>
+         <b>Posted by: {{ post.first_name }} at {{ post.date }}</b>
         {% if current_user.admin == True %}
             <a type="button" class="fa fa-pencil" href="/updateLog/{{ post.id }}">
                 <span aria-hidden="true"></span>
