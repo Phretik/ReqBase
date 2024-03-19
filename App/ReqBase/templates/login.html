@@ -27,4 +27,10 @@
     <button type="submit" class="btn btn-primary">Login</button>
 </form>
 <!--Creates a form to login, email, password and a login button-->
+
+<div>
+    {% for user in users %}
+     <b>Posted by: {{ user.email }} at {{ user.password }}</b>
+    {% endfor %}
+</div>
 {% endblock %}
