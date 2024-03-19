@@ -40,6 +40,6 @@ def create_app():
     return app
 
 def create_database(app):
-    if not path.exists('App\ReqBase\database.db'):   ##Creates database unless one already exists
+    if not path.exists('ReqBase/instance/' + DB_NAME):   ##Creates database unless one already exists
         with app.app_context():
             db.create_all()
