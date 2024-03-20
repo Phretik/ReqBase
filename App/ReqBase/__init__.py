@@ -1,11 +1,14 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
+import os
 from flask_login import LoginManager
     
 
 db = SQLAlchemy() 
 DB_NAME = "database.db"
+DB_PATH = "C:\Users\talmond3\OneDrive - DXC Production\Documents\GitHub\ReqBase\App\ReqBase\instance\database.db"
+GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
 
 def create_app():
@@ -14,7 +17,7 @@ def create_app():
     
     
     app.config['SECRET_KEY'] = 'Obliviate'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_PATH}'
     ##app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://reqbase_database_user:MTjAUIER9Vu1oBu679YadjEiemUypZw6@dpg-cnfmchi1hbls739frbvg-a.oregon-postgres.render.com/reqbase_database'
     
     db.init_app(app)
@@ -40,6 +43,6 @@ def create_app():
     return app
 
 def create_database(app):
-    if not path.exists('App\ReqBase\instance/' + DB_NAME):   ##Creates database unless one already exists
+    if not path.exists(DB_PATH):   ##Creates database unless one already exists
         with app.app_context():
             db.create_all()
