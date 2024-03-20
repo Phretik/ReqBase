@@ -7,7 +7,7 @@ from flask_login import LoginManager
 
 db = SQLAlchemy() 
 DB_NAME = "database.db"
-DB_PATH = "C:\\Users\\talmond3\\OneDrive - DXC Production\\Documents\\GitHub\\ReqBase\\App\\ReqBase\\instance\\database.db"
+DB_PATH = "App/ReqBase/instance/database.db"
 
 
 def create_app():
