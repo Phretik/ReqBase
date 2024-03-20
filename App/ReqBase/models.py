@@ -31,7 +31,7 @@ class User(db.Model, UserMixin):
 class Log(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_email = db.Column(db.String(150), db.ForeignKey('user.email'))  ##Creates a Log object with the shown attributes
-    first_name = db.Column(db.String(150), db.ForeignKey('user.first_name')) Created first name for log
+    first_name = db.Column(db.String(150), db.ForeignKey('user.first_name')) ##Created first name for log
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     post = db.Column(db.String(10000))
 
