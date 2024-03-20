@@ -85,7 +85,10 @@
                         <a type="button" class="fa fa-pencil" href="/updateReq/{{ req.id }}">
                             <span aria-hidden="true"></span>
                         </a>
-                        <button type="button" class="close" onclick="deleteReq( req.id )">
+                        <a type="button" class="fa fa-pencil" href="/delete-req/{{ req.id }}">
+                            <span aria-hidden="true"></span>
+                        </a>
+                        <button type="button" class="close" onclick="deleteReq({{ req.id }})">
                             <span aria-hidden="true">&times;</span>
                         </button>
                         <!--Creates two buttons, one to edit, one to delete-->
