@@ -87,7 +87,7 @@ def sign_up():
             flash('Password must be at least 6 characters.', category='error')
             #pass
         else:
-            new_user = User(email=email, first_name=first_name, password=generate_password_hash(password , method='sha256'))
+            new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1 , method='sha256'))
             db.session.add(new_user)  ##If a new user, creates a new user and commits to database
             db.session.commit()
             login_user(new_user, remember=True) ##Logs in the user
