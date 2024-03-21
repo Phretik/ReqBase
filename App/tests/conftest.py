@@ -5,7 +5,9 @@ from ReqBase.models import User
 
 @pytest.fixture()
 def app():
-    app = create_app("sqlite://")
+    app = create_app()
+    app.config['SECRET_KEY'] = 'Obliviate'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
 
     with app.app_context():
         db.create_all()
