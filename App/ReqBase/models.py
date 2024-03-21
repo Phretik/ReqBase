@@ -23,7 +23,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(150), unique=True, nullable=False)
     password = db.Column(db.String(150), nullable=False)           ##Creates a User object with the shown attributes
     first_name = db.Column(db.String(150), nullable=False)
-    admin = db.Column(db.Boolean(), default=True, nullable=False)
+    admin = db.Column(db.Boolean(), default=False, nullable=False)
     reqs = db.relationship('Req', backref='user')
     logs = db.relationship('Log', backref='user')           ##States a relationship with Req and Log classes
 
