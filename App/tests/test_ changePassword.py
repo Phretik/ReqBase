@@ -1,5 +1,5 @@
 ##Sign up page
 
-def test_loadPage(client):
+def test_loadPageUnauthorized(client):
     response = client.get("/changePass")
-    assert b"<title>Sign up</title>" in response.data
+    assert b"<title>Redirecting...</title>" in response.data

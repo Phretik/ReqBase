@@ -7,7 +7,7 @@ from flask_login import LoginManager
 
 db = SQLAlchemy() 
 DB_NAME = "database.db"
-DB_PATH = "C:\\Users\\talmond3\\OneDrive - DXC Production\\Documents\\GitHub\\ReqBase\\App\\ReqBase\\instance\\database.db"
+DB_PATH = "App\ReqBase\instance\database.db"
 
 
 def create_app():
@@ -16,7 +16,7 @@ def create_app():
     
     
     app.config['SECRET_KEY'] = 'Obliviate'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_PATH}'
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     
     db.init_app(app)
 
@@ -36,7 +36,8 @@ def create_app():
 
     @login_manager.user_loader
     def load_user(id):
-        return User.query.get(int(id))     ##Loads user
+        return db.session.get(User(int(id)))
+        ##return User.query.get(int(id))     ##Loads user
 
     return app
 
