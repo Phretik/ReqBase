@@ -1,6 +1,6 @@
 import pytest
 from flask import Flask, request
-from ReqBase import auth, db, User, DB_NAME
+from App import auth, db, User, DB_NAME
 
 @pytest.fixture
 def app():
