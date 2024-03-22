@@ -16,7 +16,7 @@ def create_app():
     
     
     app.config['SECRET_KEY'] = 'Obliviate'
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config['SQLALCHEMY_DATABASE_URI'] = '/var/data'
     
     db.init_app(app)
 
