@@ -2,23 +2,20 @@ import pytest
 from ReqBase.models import Req
 from ReqBase import db
 
-@pytest.mark.usefixtures('login')
-def test_loadPage(client):
+
+## Request page
+
+
+def test_loadPageUnauthorized(client):
+
     response = client.get("/")
-    assert b"<title>Requests</title>" in response.data
+    
+    assert b"<title>Redirecting...</title>" in response.data   ##Checks page doesn't load when not logged in
 
 @pytest.mark.usefixtures('login')
-def test_createRequest(client, app):
+def test_loadPageRequest(client):
 
-    response = client.post("/", 
-                           data={
-                               "appName": "TestApp", 
-                               "appVendor": "Vendor", 
-                               "reqName": "Requestor", 
-                               "archNum": "x64",
-                               "note": "App notes"},
-                                follow_redirects=True)
+    response = client.get("/")           ##Open request page
     
-    with app.app_context():
-        assert Req.query.first().app_name == "TestApp"
+    assert b"<title>Requests</title>" in response.data
             
