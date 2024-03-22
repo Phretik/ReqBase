@@ -38,6 +38,7 @@ def requests():
 def updateReq(id):
     if current_user.admin == False:
         logout()
+    return render_template('login.html')
 
     req_to_update = Req.query.get_or_404(id)     ##Querys the database using the passed Id
     if request.method == 'POST':
