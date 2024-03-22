@@ -11,8 +11,7 @@ DB_PATH = r'App\ReqBase\instance\database.db'
 
 
 def create_app():
-    ##app = Flask(__name__) ##Creates the app and database
-    app = Flask(__name__, static_url_path='', static_folder='static', template_folder='templates')
+    app = Flask(__name__, static_url_path='', static_folder='static', template_folder='templates') ##Creates the flask app
     
     
     app.config['SECRET_KEY'] = 'Obliviate'
