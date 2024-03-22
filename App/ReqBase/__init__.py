@@ -17,7 +17,7 @@ def create_app():
     
     app.config['SECRET_KEY'] = 'Obliviate'
     app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://reqbase_database_al0j_user:dmfgGcoJDLyPpvk8Rfmyz3aTNzAp9oBO@dpg-cnuid76d3nmc73aairog-a.oregon-postgres.render.com/reqbase_database_al0j"
-    ##postgresql://reqbase_database_al0j_user:dmfgGcoJDLyPpvk8Rfmyz3aTNzAp9oBO@dpg-cnuid76d3nmc73aairog-a.oregon-postgres.render.com/reqbase_database_al0j
+    ##Sets Database URI
     
     db.init_app(app)
 

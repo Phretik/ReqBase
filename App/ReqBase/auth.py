@@ -13,7 +13,7 @@ def login():
         email = request.form.get('email')
         password = request.form.get('password')
 
-        user = User.query.filter_by(email=email).first()  ##Finds the user with the email entered
+        user = User.query.filter_by(email=email).first()  ##Finds the user with the email. parameterized query stops SQL injection
         if user:
             if check_password_hash(user.password, password):  ##Checks password
                 flash('Logged in successfully', category='success')
