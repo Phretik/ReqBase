@@ -1,5 +1,5 @@
 # ReqBase
-Reqbase: Web Application for Software Engineering and Agile Module
+Reqbase: Web Application for Software Engineering and Devops Module
 Reqbase is a web application tailored to my current job role in applications packaging. It facilitates the management of requests for packaged apps and enables team collaboration through a shared log. The application supports two types of users: admin and standard.
 
 User Roles:
