@@ -1,8 +1,7 @@
 import pytest
-from flask import Flask, request
 from ReqBase import auth, db, DB_NAME, create_app
 from ReqBase.models import User
-from flask_login import login_user, login_required, logout_user, current_user
+from flask_login import current_user
 
 @pytest.fixture()
 def app():
