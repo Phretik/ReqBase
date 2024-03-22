@@ -4,7 +4,7 @@ from .models import Req, Log
 from . import db
 from flask import flash
 import json
-from auth import logout
+from .auth import logout
 
 views = Blueprint('views', __name__)
 
@@ -38,7 +38,7 @@ def requests():
 def updateReq(id):
     if current_user.admin == False:
         logout()
-    
+
     req_to_update = Req.query.get_or_404(id)     ##Querys the database using the passed Id
     if request.method == 'POST':
         req_to_update.app_name = request.form['appName']
