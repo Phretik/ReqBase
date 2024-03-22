@@ -43,7 +43,7 @@ def updateReq(id):
     req_to_update = Req.query.get_or_404(id)     ##Querys the database using the passed Id
     if request.method == 'POST':
         req_to_update.app_name = request.form['appName']
-        req_to_update.app_vendor = request.form['appVendor']   ##Changes the attributes of the object, it does
+        req_to_update.app_vendor = request.form['appVendor']   ##Changes the attributes of the object
         req_to_update.req_name = request.form['reqName']
         req_to_update.arch = request.form['archNum']
         req_to_update.note = request.form['note']
