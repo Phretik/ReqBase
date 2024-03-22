@@ -16,7 +16,7 @@ def create_app():
     
     
     app.config['SECRET_KEY'] = 'Obliviate'
-    app.config['SQLALCHEMY_DATABASE_URI'] = '/var/data'
+    app.config['SQLALCHEMY_DATABASE_URI'] = r'https://reqbase.onrender.com/var/data'
     
     db.init_app(app)
 
