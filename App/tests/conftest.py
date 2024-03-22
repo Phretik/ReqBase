@@ -24,10 +24,10 @@ def login(app, client):                  ##Logs in user
                            data={
                                "email": "Admin@admin.com", 
                                "firstname": "Admin", 
-                               "password1": "password", 
-                               "password2": "password"},
+                               "password1": "Testing1995", 
+                               "password2": "Testing1995"},
                                 follow_redirects=True)
     
-    response = client.post("/login", data={"email": "Admin@admin.com", "password": "password"})
+    response = client.post("/login", data={"email": "Admin@admin.com", "password": "Testing1995"})
 
     yield
