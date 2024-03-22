@@ -8,7 +8,6 @@ jobs:
   run-tests:
     strategy:
       fail-fast:false
-      matrix:
         os: [windows-latest]
         python-version:
           - "3.9"
