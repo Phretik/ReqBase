@@ -21,4 +21,4 @@ def test_signUpUser(client, app):
                                 follow_redirects=True)
     
     with app.app_context():
-        assert User.query.count() == 1   ##Assert user is created
+        assert User.query.filter_by(User.email, "Admin@admin.com") == True   ##Assert user is created

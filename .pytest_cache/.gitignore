@@ -1,4 +1,6 @@
 # Created by pytest automatically.
 .venv/
+venv/
+venv
 instance/
 __pycache__/
