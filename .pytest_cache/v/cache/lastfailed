@@ -1,0 +1,9 @@
+{
+  "App/tests/test_signup.py::test_sign_up_success": true,
+  "App/tests/test_signup.py::test_sign_up_existing_email": true,
+  "App/tests/test_ changePassword.py::test_loadPage": true,
+  "App/tests/test_login.py::test_loginUser": true,
+  "App/tests/test_ request.py::test_createRequest": true,
+  "App/tests/test_ updateLog.py::test_updateLog": true,
+  "App/tests/test_updateReq.py::test_deleteRequest": true
+}
